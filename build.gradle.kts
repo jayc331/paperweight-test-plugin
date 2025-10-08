@@ -57,6 +57,25 @@ tasks {
    */
 }
 
+tasks.named<JavaExec>("runServer") {
+  // Use the file from the Gradle configuration
+  jvmArgs("-javaagent:${hotswapAgent.singleFile}")
+
+  // Add these JVM arguments to open JDK modules for HotswapAgent
+  jvmArgs(
+    "--add-opens=java.base/java.lang=ALL-UNNAMED",
+    "--add-opens=java.base/java.io=ALL-UNNAMED",
+    "--add-opens=java.base/java.util=ALL-UNNAMED",
+    "--add-opens=java.base/java.util.concurrent=ALL-UNNAMED",
+    "--add-opens=java.base/java.net=ALL-UNNAMED",
+    "--add-opens=java.base/java.nio=ALL-UNNAMED",
+    "--add-opens=java.base/java.lang.reflect=ALL-UNNAMED",
+    "--add-opens=java.base/java.lang.invoke=ALL-UNNAMED",
+    "--add-opens=java.instrument/java.lang.instrument=ALL-UNNAMED",
+    "--add-opens=java.desktop/java.beans=ALL-UNNAMED"
+  )
+}
+
 // Configure plugin.yml generation
 // - name, version, and description are inherited from the Gradle project.
 bukkitPluginYaml {
