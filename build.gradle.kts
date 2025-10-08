@@ -25,7 +25,13 @@ tasks.assemble {
 }
  */
 
+// Create a detached configuration for the Hotswap Agent
+val hotswapAgent by configurations.creating
+
 dependencies {
+  // Add HotswapAgent to your custom configuration
+  hotswapAgent("org.hotswapagent:hotswap-agent-core:2.0.2")
+
   paperweight.paperDevBundle("1.21.8-R0.1-SNAPSHOT")
   // paperweight.foliaDevBundle("1.21.8-R0.1-SNAPSHOT")
   // paperweight.devBundle("com.example.paperfork", "1.21.8-R0.1-SNAPSHOT")
