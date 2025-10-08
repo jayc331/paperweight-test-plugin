@@ -1,4 +1,4 @@
-package io.papermc.paperweight.testplugin;
+package io.github.jayc331.testplugin;
 
 import net.minecraft.SharedConstants;
 import org.bukkit.event.Listener;

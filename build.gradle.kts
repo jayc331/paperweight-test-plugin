@@ -7,8 +7,8 @@ plugins {
   id("xyz.jpenilla.resource-factory-bukkit-convention") version "1.3.0" // Generates plugin.yml based on the Gradle config
 }
 
-group = "io.papermc.paperweight"
-version = "1.0.0-SNAPSHOT"
+group = "io.github.jayc331"
+version = "0.1.0-SNAPSHOT"
 description = "Test plugin for paperweight-userdev"
 
 java {
@@ -54,7 +54,7 @@ tasks {
 // Configure plugin.yml generation
 // - name, version, and description are inherited from the Gradle project.
 bukkitPluginYaml {
-  main = "io.papermc.paperweight.testplugin.TestPlugin"
+  main = "io.github.jayc331.testplugin.TestPlugin"
   load = BukkitPluginYaml.PluginLoadOrder.STARTUP
   authors.add("Author")
   apiVersion = "1.21.8"
